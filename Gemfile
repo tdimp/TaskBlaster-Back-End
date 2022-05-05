@@ -36,6 +36,10 @@ gem "require_all", "~> 3.0"
 
 # These gems will only be used when we are running the application locally
 group :development do
+  # Used to generate seed data
+  # https://github.com/faker-ruby/faker
+  gem "faker", "~> 2.18"
+
   gem "pry", "~> 0.14.1"
 
   # Automatically reload when there are changes
