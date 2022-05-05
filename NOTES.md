@@ -14,6 +14,7 @@ Tasks - belongs_to taskcategory and users
   Description (string)
   Priority (string)
   User ID (integer, foreign key)
+  Category Name (string, foreign key)
   Deadline (datetime) # https://api.rubyonrails.org/classes/DateTime.html
   Timestamps
 
@@ -21,11 +22,6 @@ Categories - has_many Tasks through TaskCategory
   Category ID (integer)
   Category Name (string)  
   Timestamps
-
-TaskCategory - JOIN table for tasks, categories
-  ID (integer, primary key)
-  Task ID (integer, foreign key)
-  Category ID (integer, foreign key)
 
 ## MVP
 
