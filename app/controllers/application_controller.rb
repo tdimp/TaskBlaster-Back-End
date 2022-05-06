@@ -7,4 +7,14 @@ class ApplicationController < Sinatra::Base
     tasks.to_json
   end
 
+  get '/users' do
+    users = User.all
+    users.to_json
+  end
+
+  get '/categories' do
+    categories = Category.all
+    categories.to_json
+  end
+
 end
