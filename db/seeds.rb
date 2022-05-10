@@ -11,18 +11,18 @@ puts "🌱 Seeding spices..."
       description: Faker::Lorem.sentence,
       category_id: rand(1..3),
       user_id: rand(1..3),
-      deadline: DateTime.new,
+      deadline: Date.new(2022,12,31),
       priority: ["High", "Medium", "Low"].sample
     )
   end
 end
 
 Category.create(
-  name: "Work"
+  name: "Home"
 )
 
 Category.create(
-  name: "Home"
+  name: "Work"
 )
 
 Category.create(
