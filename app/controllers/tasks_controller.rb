@@ -19,5 +19,11 @@ class TasksController < ApplicationController
     end
   end
 
-  #patch '/tasks/:id' do 
+  #patch '/tasks/:id' do
+
+  delete '/tasks/:id' do
+    task = Task.find(params[:id])
+    task.destroy
+    task.to_json
+  end
 end
