@@ -5,6 +5,11 @@ class TasksController < ApplicationController
     tasks.to_json
   end
 
+  get '/tasks/:id' do
+    task = Task.find(params[:id])
+    task.to_json
+  end
+
   post '/tasks' do
     task = Task.new(params[:task])
     if task.save
@@ -13,4 +18,6 @@ class TasksController < ApplicationController
       { errors: task.errors.full_messages }.to_json
     end
   end
+
+  #patch '/tasks/:id' do 
 end
