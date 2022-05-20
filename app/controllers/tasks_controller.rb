@@ -19,7 +19,14 @@ class TasksController < ApplicationController
     end
   end
 
-  #patch '/tasks/:id' do
+  patch '/tasks/:id' do
+    task = Task.find(params[:id])
+    if task && task.update(params[:task])
+      task.to_json
+    else
+      { errors: task.errors.full_messages }.to_json
+    end
+  end
 
   delete '/tasks/:id' do
     task = Task.find(params[:id])
