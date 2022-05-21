@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   patch '/users/:id' do
     user = User.find(params[:id])
-    if user && user.update(params[:user])
+    if user && user.update(name: params[:name])
       user.to_json
     else
       { errors: user.errors.full_messages }.to_json
