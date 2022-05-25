@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     user.to_json
   end
 
-  post '/users' do
+  post '/users' do # Make sure front end requests are nested objects similar to the nested hashes in Ruby
     user = User.new(params[:user])
     if user.save
       user.to_json
@@ -21,14 +21,14 @@ class UsersController < ApplicationController
 
   patch '/users/:id' do
     user = User.find(params[:id])
-    if user && user.update(name: params[:name])
+    if user && user.update(params[:user])
       user.to_json
     else
       { errors: user.errors.full_messages }.to_json
     end
   end
 
-  delete '/user/:id' do
+  delete '/users/:id' do
     user = User.find(params[:id])
     user.destroy
     user.to_json

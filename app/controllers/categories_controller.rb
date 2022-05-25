@@ -12,9 +12,7 @@ class CategoriesController < ApplicationController
 
   patch '/categories/:id' do
     category = Category.find(params[:id])
-    if category.update(
-      name: params[:name]
-    )
+    if category.update(params[:category])
     category.to_json
     else
       { errors: CategoriesController.errors.full_messages }
