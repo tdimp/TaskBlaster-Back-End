@@ -10,7 +10,7 @@ class TasksController < ApplicationController
     task.to_json
   end
 
-  post '/tasks' do # Make sure front end requests are nested objects similar to the nested hashes in Ruby
+  post '/tasks' do
     task = Task.new(params[:task])
     if task.save
       task.to_json
