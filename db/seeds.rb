@@ -5,7 +5,7 @@ puts "🌱 Seeding spices..."
 3.times do
   user = User.create(name: Faker::Name.name)
 
-  rand(1..5).times do
+  rand(1..3).times do
     task = Task.create(
       name: Faker::Lorem.word,
       description: Faker::Lorem.sentence,
