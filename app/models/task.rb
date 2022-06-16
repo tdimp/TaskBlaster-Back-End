@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
-  belongs_to :categories
-  belongs_to :users
+  belongs_to :category
+  belongs_to :user
 
   validates :name, presence: true
   validates :category_id, presence: true
